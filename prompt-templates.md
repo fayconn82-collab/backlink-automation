@@ -41,7 +41,7 @@
 ## 3. 单站三平台：产品目录 + 技术检测页 + Add URL
 
 ```text
-请根据 sites/demo-site.md，为 DemoSite 完成 3 个有效外链/公开资料页提交。
+请根据 sites/demo-site.md，为 DemoSite 完成 5 个有效外链/公开资料页提交。
 
 平台类型要求：
 1. 尝试 1 个产品目录或工具目录。
@@ -63,12 +63,12 @@
 ```text
 请为以下网站执行今日外链提交 SOP：
 
-- sites/demo-site-a.md：目标 3 个
-- sites/demo-site-b.md：目标 3 个
-- sites/demo-site-c.md：目标 3 个
+- sites/demo-site-a.md：目标 5 个
+- sites/demo-site-b.md：目标 5 个
+- sites/demo-site-c.md：目标 5 个
 
 要求：
-1. 每个网站完成 3 个有效提交/公开资料页。
+1. 每个网站完成 5 个有效提交/公开资料页。
 2. 优先产品目录，其次技术检测页，最后 Add URL 补充。
 3. 不要重复提交同一网站到同一平台。
 4. 遇到登录、验证码、付费、badge 要求，记录原因并跳过。
