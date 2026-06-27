@@ -1,0 +1,69 @@
+﻿平台名称,类型,提交入口/网址,推荐用途,是否通常需要登录,是否可能付费,计数条件,避坑说明,来源
+BetaPage / PitchWall,产品 / SaaS / 工具目录,https://betapage.co/submit-startup,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,入口可能跳转 PitchWall，需要人工确认。,实测记录
+DevHunt,产品 / SaaS / 工具目录,https://devhunt.org/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+Launching Next,产品 / SaaS / 工具目录,https://www.launchingnext.com/submit/,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,只有 Submission Received 或明确回执才计数；进入 $99 升级页不算。,实测记录
+MicroLaunch,产品 / SaaS / 工具目录,https://microlaunch.net/launch,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+PeerList,产品 / SaaS / 工具目录,https://peerlist.io/projects/new,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+SaaSHub,产品 / SaaS / 工具目录,https://www.saashub.com/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,可能已有 managed listing；existing-active 可记录但不算当天新提交。,实测记录
+SEO SiteCheckup,技术检测 / 公开资料页,https://seositecheckup.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开 SEO audit/report 页面可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是 SEO 检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+StartupRanked,产品 / SaaS / 工具目录,https://www.startupranked.com/add-startup,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+StatsCrop,产品 / SaaS / 工具目录,https://statscrop.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+The Useful Website,产品 / SaaS / 工具目录,https://theuseful.website,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+TwelveTools,产品 / SaaS / 工具目录,https://twelvetools.com/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+Uneed,产品 / SaaS / 工具目录,https://www.uneed.best/submit-a-tool,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,可能只是 waiting-line/edit 草稿；ready=false 或 launchDate=null 不计数；付费插队跳过。,实测记录
+WhatsMyDNS Propagation Checker,技术检测 / 公开资料页,https://whatsmydns.net,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开 DNS propagation 查询结果页可访问，页面内容包含目标域名；只按 DNS 资料页计数。,这是 DNS 查询页，不是产品推荐；注意不同记录类型会生成不同结果。,实测记录
+AItoolonline,AI / 工具目录,https://www.aitoolonline.com/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+Fazier,AI / 工具目录,https://fazier.com/launch,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,可能要求评论、badge、英文站、DR>0，不满足不计数。,实测记录
+Futurepedia,AI / 工具目录,https://www.futurepedia.io/submit-tool,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+TheresAnAIForThat,AI / 工具目录,https://www.theresanaiforthat.com/submit/,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+Toolify,AI / 工具目录,https://www.toolify.ai/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+TopAI.tools,AI / 工具目录,https://topai.tools/submit,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现 submitted / pending review / public listing / dashboard record / scheduled / Submission Received 等明确状态才计数。,注意登录、验证码、付费墙、badge 要求和重复提交。,实测记录
+BlackListAlert,技术检测 / 公开资料页,https://blacklistalert.org,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+BuiltWith,技术检测 / 公开资料页,https://builtwith.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,结果页可能先返回生成中状态；确认最终页面或 URL 后再计数。,实测记录
+CheckHost,技术检测 / 公开资料页,https://check-host.net,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+CriminalIP,技术检测 / 公开资料页,https://criminalip.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+CubDomain,技术检测 / 公开资料页,https://cubdomain.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+DNSChecker,技术检测 / 公开资料页,https://dnschecker.org,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+DomainIQ,技术检测 / 公开资料页,https://domainiq.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+HackerTarget,技术检测 / 公开资料页,https://hackertarget.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Host.io,技术检测 / 公开资料页,https://host.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,多为已有域名资料页，可记录为公开资料页，不要包装成推荐。,实测记录
+HTTPStatus.io,技术检测 / 公开资料页,https://httpstatus.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+HypeStat,技术检测 / 公开资料页,https://hypestat.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+IPAddress.com,技术检测 / 公开资料页,https://ipaddress.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+IPQualityScore Domain Reputation,技术检测 / 公开资料页,https://ipqualityscore.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+IPVoid,技术检测 / 公开资料页,https://ipvoid.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Mozilla Observatory,技术检测 / 公开资料页,https://developer.mozilla.org,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+MXToolbox,技术检测 / 公开资料页,https://mxtoolbox.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Netcraft,技术检测 / 公开资料页,https://sitereport.netcraft.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+NSLookup.io,技术检测 / 公开资料页,https://nslookup.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+OpenAdminTools,技术检测 / 公开资料页,https://openadmintools.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+PageSpeed Insights,技术检测 / 公开资料页,https://pagespeed.web.dev,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+PublicWWW,技术检测 / 公开资料页,https://publicwww.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,属于公开检索结果页，不是产品推荐。,实测记录
+Quttera,技术检测 / 公开资料页,https://quttera.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Robtex,技术检测 / 公开资料页,https://robtex.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+ScamAdviser,技术检测 / 公开资料页,https://scamadviser.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SecurityHeaders,技术检测 / 公开资料页,https://securityheaders.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Shodan Domain Records,技术检测 / 公开资料页,https://shodan.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SimilarSites,技术检测 / 公开资料页,https://similarsites.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SitePrice,技术检测 / 公开资料页,https://siteprice.org,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SSL Labs,技术检测 / 公开资料页,https://ssllabs.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SSLShopper,技术检测 / 公开资料页,https://sslshopper.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+SSLTrust Website Security Check,技术检测 / 公开资料页,https://ssltrust.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+StatShow,技术检测 / 公开资料页,https://statshow.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Sucuri SiteCheck,技术检测 / 公开资料页,https://sitecheck.sucuri.net,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Sur.ly,技术检测 / 公开资料页,https://sur.ly,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+URLScan,技术检测 / 公开资料页,https://urlscan.io,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+VirusTotal,技术检测 / 公开资料页,https://virustotal.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,只提交公开网站；这是安全资料页，不是产品推荐。,实测记录
+W3Techs,技术检测 / 公开资料页,https://w3techs.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Wappalyzer,技术检测 / 公开资料页,https://wappalyzer.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Web of Trust,技术检测 / 公开资料页,https://mywot.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Website Informer,技术检测 / 公开资料页,https://website.informer.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+WhatCMS,技术检测 / 公开资料页,https://whatcms.org,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+WhatRuns,技术检测 / 公开资料页,https://whatruns.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Who.is,技术检测 / 公开资料页,https://who.is,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Whois.com,技术检测 / 公开资料页,https://whois.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Whoxy,技术检测 / 公开资料页,https://whoxy.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Worth Of Web,技术检测 / 公开资料页,https://worthofweb.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,公开结果页可访问，最终 URL 或页面内容包含目标域名；只按技术资料页/公开资料页计数。,这是技术检测/公开资料页，不是产品推荐；结果要客观记录。,实测记录
+Active Search Results,Add URL / 搜索发现,https://activesearchresults.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现明确提交回执、pending review、email confirmation 完成或可验证结果页才计数。,质量一般，注意广告、邮件确认和无回执情况。,实测记录
+Free Web Submission,Add URL / 搜索发现,https://freewebsubmission.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现明确提交回执、pending review、email confirmation 完成或可验证结果页才计数。,质量一般，注意广告、邮件确认和无回执情况。,实测记录
+InfoTiger,Add URL / 搜索发现,https://infotiger.com,按自动化实测用于外链提交、公开资料页生成或技术检测验证,按平台而定,按平台而定,出现明确提交回执、pending review、email confirmation 完成或可验证结果页才计数。,质量一般，注意广告、邮件确认和无回执情况。,实测记录
