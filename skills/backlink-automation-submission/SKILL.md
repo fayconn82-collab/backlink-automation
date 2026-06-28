@@ -1,294 +1,169 @@
 ---
 name: backlink-automation-submission
-description: Use Hermes + OpenCLI to run repeatable white-hat backlink submission workflows for indie websites, including platform selection, browser operation rules, success criteria, and daily logging.
+description: 白帽外链半自动化提交流程。Use when 用户要求发外链、提交产品到目录平台、做技术检测页外链、或运行每日外链配额。NOT for 黑帽外链、群发垃圾外链、自动绕过验证码。
+version: 1.0.0
+author: Friday023
+license: MIT
+platforms: [macos]
+metadata:
+  hermes:
+    tags: [seo, backlink, outreach, automation, opencli]
+    related_skills: [opencli-browser]
 ---
 
-# Backlink Automation Submission
+# 外链自动化提交
 
-## When to use
+Hermes = 大脑，OpenCLI = 手和眼睛，Chrome = 真实操作现场，记录表 = 账本。
 
-Use this skill when the user wants to submit backlinks / product listings / directory listings / technical audit pages for one or more websites, especially when using Hermes Agent with a real Chrome browser controlled by OpenCLI.
+每个外链提交流程：选平台 → 前台打开 → 填写/提交 → 验证链接性质 → 记录。
 
-This skill is designed for white-hat, low-volume, manual-review-friendly backlink work. It is not for spam, mass posting, cloaking, fake accounts, comment spam, or bypassing anti-abuse systems.
+## 信息归宿规则
 
-## Core principle
+工作中产生的信息严格按去向分流，不要全塞 gbrain：
 
-The goal is not to click as many buttons as possible.
+| 信息类型 | 去向 | 例子 |
+|---------|------|------|
+| 世界知识/事实 | gbrain 页面 | 平台经验、OpenCLI 架构、外链方法论 |
+| 项目数据/产物 | repo 文件（git 管理） | 每日记录 records/daily/、产品档案 sites/、脚本 scripts/ |
+| 操作偏好 | Memory | 用户喜欢中文、关键操作确认 |
 
-The goal is to create a reliable daily backlink SOP:
+## 前置检查
 
-1. Read website profile.
-2. Select relevant platforms.
-3. Submit or generate public pages carefully.
-4. Stop at sensitive checkpoints.
-5. Verify evidence before counting.
-6. Record every success, block, and failure.
-7. Improve the platform notes after each run.
+每次 session 开始或 compact 后，必须先做：
 
-## Inputs required
-
-For each target website, require a site profile markdown file with:
-
-- Website Name
-- Website URL
-- One-liner
-- Short Description CN, optional
-- Long Description EN
-- Target Users
-- Categories
-- Tags
-- Logo Path, if available
-- Screenshot Path, if available
-- Contact Email
-- GitHub / social links, if available
-- Notes / constraints
-
-Do not invent missing business claims. If a field is missing and it materially affects submission, ask the user or skip platforms requiring that field.
-
-## Daily target
-
-Default daily target:
-
-- 3 counted submissions / public pages per website per day.
-- Prefer quality and relevance over quantity.
-- Do not brute force dozens of directories in one day.
-
-A counted item must have evidence. Filling a form is not enough.
-
-## Platform priority
-
-Prefer in this order:
-
-1. Relevant product / SaaS / tool directories.
-2. Niche directories that match the site category.
-3. Technical / security / SEO audit pages that produce public URLs containing the target domain.
-4. Add URL / search discovery submissions with explicit confirmation.
-
-Avoid or skip:
-
-- Irrelevant AI directories for non-AI products.
-- Obvious link farms.
-- Platforms requiring payment unless the user explicitly approves.
-- Platforms requiring website badge unless the user explicitly approves.
-- Platforms requiring fake reviews, fake votes, fake accounts, or comment spam.
-
-## Browser operation rules
-
-When using OpenCLI / browser control:
-
-1. Use the user's real Chrome session only for normal browsing and already-approved login states.
-2. Never type passwords, API keys, recovery codes, credit cards, or payment details.
-3. Stop and ask the user to take over when encountering:
-   - login
-   - OAuth confirmation
-   - password prompt
-   - reCAPTCHA / hCaptcha
-   - email verification
-   - payment page
-   - required badge installation
-   - account security warning
-   - unclear destructive action
-4. After the user completes a checkpoint, continue from the current page.
-5. Do not bypass anti-bot systems.
-6. Do not create fake identities.
-
-## What counts as success
-
-Count only if one of these is true:
-
-- Platform shows submitted / pending review / submission received.
-- Platform shows live / public listing.
-- Dashboard contains a clear record of the submitted product or site.
-- A public verification URL returns HTTP 200 and contains the target domain.
-- A scheduled listing has a clear scheduled state and platform-owned URL.
-
-Record the evidence URL whenever possible.
-
-## What does NOT count
-
-Do not count:
-
-- only filled form, not submitted
-- draft
-- incomplete profile
-- payment required
-- captcha blocked
-- email verification pending
-- duplicate without a new counted action
-- login required and not completed
-- badge required and not installed
-- unclear confirmation
-- platform not relevant
-- final page does not contain target domain
-
-Record these as not counted with reason.
-
-## Status taxonomy
-
-Use these statuses consistently:
-
-Counted statuses:
-
-- submitted
-- pending review
-- public
-- live
-- verified
-- scheduled
-- existing-active, only if the task is auditing existing backlinks, not daily new count
-
-Not-counted statuses:
-
-- login-required
-- captcha
-- email-verification
-- paid
-- badge-required
-- duplicate
-- draft
-- incomplete
-- failed
-- not-relevant
-- unclear
-
-## Daily log format
-
-Write or update `records/daily/YYYY-MM-DD.md`.
-
-Use this structure:
-
-```markdown
-# 外链提交记录 - YYYY-MM-DD
-
-## 今日计数表
-
-| 网站 | 目标 | 已计数 | 还差 | 已计数平台 |
-|---|---:|---:|---:|---|
-| DemoSite | 3 | 2 | 1 | Platform A, Platform B |
-
-## 明细记录
-
-| 时间 | 网站 | 平台 | 平台网址 | 提交/验证 URL | 状态 | 是否计数 | 备注 |
-|---|---|---|---|---|---|---|---|
-| YYYY-MM-DD HH:mm | DemoSite | Platform A | https://example.com | https://example.com/demo | pending review | 是 | Submission Received |
-
-## 未计数/阻塞记录
-
-| 时间 | 网站 | 平台 | 阻塞类型 | 是否计数 | 下一步 |
-|---|---|---|---|---|---|
-| YYYY-MM-DD HH:mm | DemoSite | Platform B | paid | 否 | 暂不付费，跳过 |
+```bash
+opencli doctor
 ```
 
-## Platform-specific notes from field experience
+确认 daemon + browser extension 都正常连接。不通则汇报用户，不继续。
 
-### Uneed
+## 用户主权规则（硬约束）
 
-If a product is only created as edit / waiting-line data and fields like `ready=false` or `launchDate=null` are present, treat it as draft/incomplete. Do not count unless there is a scheduled or public listing state.
+以下规则优先级高于一切流程：
 
-### SaaSHub
+1. **你说多少我做多少** — 用户没明确授权的操作不做，不擅自扩展、不自动跳到下一步
+2. **改动前先汇报** — 任何实质性修改（编辑文件、改配置、写 skill）必须先汇报并取得同意，只读操作无需确认
+3. **完成即停** — 发完一个平台后停下来汇报，等用户指示再发下一个
+4. **阻塞即停即报** — 遇到 Cloudflare/403/登录墙/验证码，立即停止操作，向用户汇报阻塞类型和建议方案，不自行切换平台重试
+5. **禁止高频重试** — 同一平台失败 2 次后放弃，同一域名访问间隔 ≥ 30 秒，禁止连续快速访问多个平台
 
-A managed listing may already exist. If so, record the public URL. Do not count it as a new daily submission unless the current task is backlink inventory or profile completion.
+## 路由
 
-### BetaList
+| 场景 | 加载 |
+|------|------|
+| 当前任务是提交外链 | 读正文下方的「核心流程」 |
+| 需要确认产品信息或写 site profile | 读 [rules/site-profile.md](rules/site-profile.md) |
+| 遇到 Cloudflare/403/登录墙/验证码 | 读 [rules/blocking-handling.md](rules/blocking-handling.md) |
+| 需要区分产品目录 vs 技术检测页 vs Add URL | 读 [rules/platform-types.md](rules/platform-types.md) |
+| compact 后恢复或新 session 接手 | 读 [rules/compact-recovery.md](rules/compact-recovery.md) |
+| 平台要求上传截图 | 读 [rules/screenshots.md](rules/screenshots.md) |
+| 发完需要验证外链性质 | 先读 [references/backlink-verification.md](references/backlink-verification.md)，再运行 `scripts/verify-backlink.py` |
+| 需要查 OpenCLI 命令用法 | 读 [references/opencli-quick-ref.md](references/opencli-quick-ref.md) |
+| 需要查原作者文章要点 | 读 [references/original-article-key-points.md](references/original-article-key-points.md) |
+| 需要查原作者文章要点 | 读 [references/original-article-key-points.md](references/original-article-key-points.md) |
+| 准备或更新产品档案 | 读 [references/site-profile.md](references/site-profile.md) |
+| 需要理解外链验证方法论、链接层次分类 | 读 [references/backlink-verification.md](references/backlink-verification.md) |
+| 需要查已验证平台清单和经验 | 读 [references/verified-platforms.md](references/verified-platforms.md) |
+| verify-backlink.py 返回空/Just a moment（Cloudflare 拦截） | 读 [references/verification-cloudflare-workaround.md](references/verification-cloudflare-workaround.md) |
+| gbrain MCP 调用连续报错或断连 | 读 [references/gbrain-interaction.md](references/gbrain-interaction.md) |
 
-Often leads to payment/package steps. If payment is required, record as paid/incomplete and do not count.
+## 核心流程
 
-### ToolFame
+### Step 1: 确认产品信息
 
-Verify the public item URL, commonly `/item/<slug>`, or a clear dashboard record. Rich text editors and tag components may fail silently. If form state does not persist, record incomplete.
+读 `sites/<product>.md`，确认网站名称、URL、描述、分类、标签、Logo 路径、截图路径。
 
-### Launching Next
+### Step 2: 选平台
 
-Count only with clear `Submission Received` or equivalent confirmation. If it routes to paid upgrade without confirmation, record paid/incomplete.
+从 `platforms/public-platforms-list.md` 选平台。优先级：产品目录 > 技术检测页 > Add URL。优先选以前验证过可用的。
 
-### Fazier
+### Step 3: 前台打开平台
 
-Free submission may require helpful comments, badge, English site, or DR > 0. If requirements are not met, record not counted.
+**所有 opencli browser 命令必须加 OPENCLI_WINDOW=foreground 环境变量。** 禁止后台窗口。
 
-### Tiny Startups
+```bash
+OPENCLI_WINDOW=foreground opencli browser <session-name> open "<platform-url>"
+```
 
-May show paid upsells. If a free continuation exists, it can be used. If email is rejected as auto-generated or suspicious, stop and ask the user.
+使用固定的 session 名（如 `backlink-submit`），不要每次换名字。
 
-### ProductFame / Turbo0
+### Step 4: 填写提交
 
-Dynamic forms may fail to save category/tag state. Do not repeatedly fight broken UI. Record incomplete and move on.
+用 `opencli browser <session> state` 获取页面结构快照，用 `click`/`type`/`select` 填写资料。每次写操作后用 `get value` 验证。
 
-## Technical audit page rules
+**提交产品目录时**：上传 Logo 和截图（如果平台要求）。【读 rules/screenshots.md】
 
-Technical audit pages are useful as public footprint / index discovery support, but they are not product recommendations.
+**提交技术检测页时**：直接访问带查询参数的检测 URL（如 `https://securityheaders.com/?q=<domain>` 或 `https://www.ssllabs.com/ssltest/analyze.html?d=<domain>`），系统自动生成公开结果页。这是这类平台的标准操作方式，无需从首页手动输入域名。
 
-When recording them, write:
+### Step 5: 判断是否成功
 
-- public SSL/TLS check page
-- public security header check page
-- public SEO audit page
-- public technology profile page
+**可以计数的状态：**
+- submitted / pending review
+- public / live / verified
+- HTTP 200 + 页面/URL 包含目标域名
 
-Do not write:
+**不能计数的状态：**
+- requires login / captcha / paid / failed
+- 只填了表但没提交
+- 没有明确回执
 
-- platform recommended us
-- platform featured us
-- high-quality editorial backlink
+**遇到阻塞 → 立即停，读 [rules/blocking-handling.md](rules/blocking-handling.md)。**
 
-Count only if the public page or final URL contains the target domain and is accessible.
+### Step 6: 验证链接性质
 
-## Suggested platform categories
+发完后运行验证脚本：
 
-Product / SaaS / tool directories:
+```bash
+python3 scripts/verify-backlink.py "<result-url>" "<target-domain>"
+```
 
-- Uneed
-- SaaSHub
-- Launching Next
-- BetaPage
-- PitchWall
-- ToolFame
-- Tiny Startups
-- ProductFame
-- Turbo0
+脚本输出：backlink_type（dofollow/nofollow/mention）、pass_weight、实际 <a> 标签数量。
 
-AI / tool directories:
+### Step 7: 记录
 
-- Futurepedia
-- Toolify
-- Fazier
-- Aimyflow
-- AICavo
+写入 `records/daily/YYYY-MM-DD.md`，使用模板格式。
 
-Technical / security / SEO check pages:
+备注使用结构化写法，不引入复杂标签系统（避免标签无限蔓延）：
+```
+type: 技术检测页 | links: 2个a标签 | rel: 无(默认dofollow) | pass_weight: true | 说明: 全球多节点DNS解析结果
+```
 
-- SSL Labs
-- Sucuri SiteCheck
-- SecurityHeaders
-- PageSpeed Insights
-- Mozilla Observatory
-- HackerTarget
-- Shodan
-- BlackListAlert
-- SEO SiteCheckup
-- WhatRuns
-- Wappalyzer
-- WhatCMS
-- OpenAdminTools
-- Host.io
-- VirusTotal
-- Robtex
-- Netcraft
-- MXToolbox
+**记录完成后向用户汇报：** 平台名称、URL、链接类型、是否传递权重、今日进度（x/目标）。
 
-Add URL / discovery:
+**汇报后停下来等用户指示，不要自动继续下一个平台。**
 
-- Active Search Results
-- InfoTiger
-- Free Web Submission
+## FORBIDDEN
 
-## Final response after each run
+- 后台窗口提交外链（所有 opencli browser 必须 OPENCLI_WINDOW=foreground）
+- 同一个平台连续失败后换 URL 重试
+- 连续访问间隔 < 30 秒
+- 遇到 Cloudflare/验证码后反复尝试
+- 产品目录类平台跳过首页表单直接拼 URL 提交（必须从平台首页开始，像真人一样填写提交）
+- 技术检测页/资料页类平台无需此限制 — 直接访问带查询参数的结果 URL 就是标准操作方式
+- 把技术检测页描述为"某某平台推荐了我的产品"
 
-Always summarize:
+## Stop Conditions
 
-1. Count table per website.
-2. Counted platforms with evidence URLs.
-3. Not-counted platforms with reasons.
-4. Human actions needed.
-5. Suggested next platforms.
+遇到以下任一，**立即停，汇报用户：**
 
-Never overstate SEO impact. Say what was actually verified.
+- Cloudflare / JS Challenge / 人机验证
+- HTTP 403 / 401
+- 登录墙（需要账号密码或 OAuth）
+- 付费墙（要求升级套餐）
+- 验证码（reCAPTCHA / 图形验证码）
+- 同一平台连续失败 2 次
+
+汇报格式：平台名、URL、遇到的阻塞类型、建议下一步（人工登录/换平台/放弃）。
+
+## 验证脚本
+
+`scripts/verify-backlink.py` — 用 curl 拉取页面 HTML，分析 <a> 标签的 href 和 rel 属性。已知局限：对 JS 渲染页面（SPA）只能抓到静态壳。**Cloudflare 保护的站点 curl 会被拦截返回 JS Challenge 页**，此时改用 OpenCLI `browser eval` 在真实浏览器页面中查 DOM。详见 [references/verification-cloudflare-workaround.md](references/verification-cloudflare-workaround.md)。
+
+## Verification Checklist
+
+- [ ] opencli doctor 通过
+- [ ] 所有 opencli browser 命令带 OPENCLI_WINDOW=foreground
+- [ ] 平台访问间隔 ≥ 30 秒
+- [ ] 成功后运行 verify-backlink.py
+- [ ] 记录写入 records/daily/YYYY-MM-DD.md
+- [ ] 结构化备注包含 link_type + pass_weight
