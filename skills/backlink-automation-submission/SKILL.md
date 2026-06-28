@@ -57,14 +57,13 @@ opencli doctor
 | 需要区分产品目录 vs 技术检测页 vs Add URL | 读 [rules/platform-types.md](rules/platform-types.md) |
 | compact 后恢复或新 session 接手 | 读 [rules/compact-recovery.md](rules/compact-recovery.md) |
 | 平台要求上传截图 | 读 [rules/screenshots.md](rules/screenshots.md) |
-| 发完需要验证外链性质 | 先读 [references/backlink-verification.md](references/backlink-verification.md)，再运行 `scripts/verify-backlink.py` |
+| 发完需要验证外链性质 | 用 OpenCLI `browser eval` 查 DOM（见 Step 6），不跑 curl 脚本 |
 | 需要查 OpenCLI 命令用法 | 读 [references/opencli-quick-ref.md](references/opencli-quick-ref.md) |
 | 需要查原作者文章要点 | 读 [references/original-article-key-points.md](references/original-article-key-points.md) |
 | 需要查原作者文章要点 | 读 [references/original-article-key-points.md](references/original-article-key-points.md) |
 | 准备或更新产品档案 | 读 [references/site-profile.md](references/site-profile.md) |
 | 需要理解外链验证方法论、链接层次分类 | 读 [references/backlink-verification.md](references/backlink-verification.md) |
 | 需要查已验证平台清单和经验 | 读 `platforms/public-platforms.csv`，查看「避坑说明」列 |
-| verify-backlink.py 返回空/Just a moment（Cloudflare 拦截） | 读 [references/verification-cloudflare-workaround.md](references/verification-cloudflare-workaround.md) |
 | gbrain MCP 调用连续报错或断连 | 读 [references/gbrain-interaction.md](references/gbrain-interaction.md) |
 
 ## 核心流程
@@ -118,19 +117,22 @@ OPENCLI_WINDOW=foreground opencli browser <session-name> open "<platform-url>"
 
 ### Step 6: 验证链接性质
 
-发完后运行验证脚本：
+**不要用 curl 脚本**（SPA 和 Cloudflare 保护页都会漏），直接用刚发完的 OpenCLI session 查真实渲染后的 DOM：
 
 ```bash
-python3 scripts/verify-backlink.py "<result-url>" "<target-domain>"
+OPENCLI_WINDOW=foreground opencli browser <session> eval "(function(){var links=document.querySelectorAll('a[href]');var result=[];links.forEach(function(a){var h=a.getAttribute('href');if(h&&h.indexOf('<target-domain>')!==-1){result.push({href:h,text:a.textContent.trim().substring(0,80),rel:a.getAttribute('rel')||'none'})}});return JSON.stringify({count:result.length,links:result});})()"
 ```
 
-脚本输出：backlink_type（dofollow/nofollow/mention）、pass_weight、实际 <a> 标签数量。
+判断标准：
+- `rel` 含 `nofollow` → nofollow，不传权
+- `rel` 为 `none` 且 href 指向目标域名 → dofollow，传权
+- `count` 为 0，但页面 URL/标题含目标域名 → mention，不传权
 
 验证结论同时追加到 `platforms/public-platforms.csv` 对应平台的「避坑说明」列，格式：
 ```
 实测结论 | 链接情况 | 日期
 ```
-例：`curl被CF拦截需用browser eval | 1个nofollow直链不传权 | 2026-06-28`
+例：`1个nofollow直链不传权 | nofollow | 2026-06-28`
 
 ### Step 7: 记录
 
@@ -167,15 +169,17 @@ type: 技术检测页 | links: 2个a标签 | rel: 无(默认dofollow) | pass_wei
 
 汇报格式：平台名、URL、遇到的阻塞类型、建议下一步（人工登录/换平台/放弃）。
 
-## 验证脚本
+## 验证方式
 
-`scripts/verify-backlink.py` — 用 curl 拉取页面 HTML，分析 <a> 标签的 href 和 rel 属性。已知局限：对 JS 渲染页面（SPA）只能抓到静态壳。**Cloudflare 保护的站点 curl 会被拦截返回 JS Challenge 页**，此时改用 OpenCLI `browser eval` 在真实浏览器页面中查 DOM。详见 [references/verification-cloudflare-workaround.md](references/verification-cloudflare-workaround.md)。
+使用 OpenCLI `browser eval` 在真实 Chrome 页面中查 DOM，分析 `<a>` 标签的 `href` 和 `rel` 属性。相比 curl 脚本，能覆盖 SPA 和 Cloudflare 保护页。
+
+`scripts/verify-backlink.py` 保留备用（纯静态 HTML 页面可用 curl 快速验证），但日常流程优先用 OpenCLI 前台模式。
 
 ## Verification Checklist
 
 - [ ] opencli doctor 通过
 - [ ] 所有 opencli browser 命令带 OPENCLI_WINDOW=foreground
 - [ ] 平台访问间隔 ≥ 30 秒
-- [ ] 成功后运行 verify-backlink.py
+- [ ] 成功后用 OpenCLI `browser eval` 验证链接（见 Step 6）
 - [ ] 记录写入 records/daily/YYYY-MM-DD.md
 - [ ] 结构化备注包含 link_type + pass_weight
