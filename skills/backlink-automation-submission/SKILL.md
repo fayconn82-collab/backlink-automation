@@ -77,7 +77,7 @@ opencli doctor
 
 从 `platforms/public-platforms-list.md` 选平台。优先级：产品目录 > 技术检测页 > Add URL。优先选以前验证过可用的。
 
-### Step 3: 前台打开平台
+### Step 3: 前台打开平台页面
 
 **所有 opencli browser 命令必须加 OPENCLI_WINDOW=foreground 环境变量。** 禁止后台窗口。
 
@@ -87,13 +87,20 @@ OPENCLI_WINDOW=foreground opencli browser <session-name> open "<platform-url>"
 
 使用固定的 session 名（如 `backlink-submit`），不要每次换名字。
 
-### Step 4: 填写提交
+### Step 4: 模拟真人操作
 
-用 `opencli browser <session> state` 获取页面结构快照，用 `click`/`type`/`select` 填写资料。每次写操作后用 `get value` 验证。
+**无论打开的是什么页面，必须通过页面上的交互元素完成操作，不许跳过输入/点击步骤直接到达结果页。**
 
-**提交产品目录时**：上传 Logo 和截图（如果平台要求）。【读 rules/screenshots.md】
+统一流程（所有平台类型适用）：
 
-**提交技术检测页时**：直接访问带查询参数的检测 URL（如 `https://securityheaders.com/?q=<domain>` 或 `https://www.ssllabs.com/ssltest/analyze.html?d=<domain>`），系统自动生成公开结果页。这是这类平台的标准操作方式，无需从首页手动输入域名。
+1. 用 `state` 获取页面结构，找到输入框/搜索框的 ref
+2. 用 `type` 输入目标域名或其他必要信息
+3. 用 `click` 点击搜索/检测/提交按钮
+4. 用 `wait time <seconds>` 等待结果生成
+5. 用 `state` 确认结果页包含目标域名
+6. 用 `get url` 记录最终结果页 URL
+
+每次写操作后用 `get value` 验证写入是否成功。提交产品目录时上传 Logo 和截图（如果平台要求）。【读 rules/screenshots.md】
 
 ### Step 5: 判断是否成功
 
@@ -135,11 +142,10 @@ type: 技术检测页 | links: 2个a标签 | rel: 无(默认dofollow) | pass_wei
 ## FORBIDDEN
 
 - 后台窗口提交外链（所有 opencli browser 必须 OPENCLI_WINDOW=foreground）
+- 跳过页面交互直接拼 URL 到达结果页（所有平台都必须走 type→click→wait 流程）
 - 同一个平台连续失败后换 URL 重试
 - 连续访问间隔 < 30 秒
 - 遇到 Cloudflare/验证码后反复尝试
-- 产品目录类平台跳过首页表单直接拼 URL 提交（必须从平台首页开始，像真人一样填写提交）
-- 技术检测页/资料页类平台无需此限制 — 直接访问带查询参数的结果 URL 就是标准操作方式
 - 把技术检测页描述为"某某平台推荐了我的产品"
 
 ## Stop Conditions
