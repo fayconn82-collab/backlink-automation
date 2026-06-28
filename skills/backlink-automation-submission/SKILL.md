@@ -63,7 +63,7 @@ opencli doctor
 | 需要查原作者文章要点 | 读 [references/original-article-key-points.md](references/original-article-key-points.md) |
 | 准备或更新产品档案 | 读 [references/site-profile.md](references/site-profile.md) |
 | 需要理解外链验证方法论、链接层次分类 | 读 [references/backlink-verification.md](references/backlink-verification.md) |
-| 需要查已验证平台清单和经验 | 读 [references/verified-platforms.md](references/verified-platforms.md) |
+| 需要查已验证平台清单和经验 | 读 `platforms/public-platforms.csv`，查看「避坑说明」列 |
 | verify-backlink.py 返回空/Just a moment（Cloudflare 拦截） | 读 [references/verification-cloudflare-workaround.md](references/verification-cloudflare-workaround.md) |
 | gbrain MCP 调用连续报错或断连 | 读 [references/gbrain-interaction.md](references/gbrain-interaction.md) |
 
@@ -125,6 +125,12 @@ python3 scripts/verify-backlink.py "<result-url>" "<target-domain>"
 ```
 
 脚本输出：backlink_type（dofollow/nofollow/mention）、pass_weight、实际 <a> 标签数量。
+
+验证结论同时追加到 `platforms/public-platforms.csv` 对应平台的「避坑说明」列，格式：
+```
+实测结论 | 链接情况 | 日期
+```
+例：`curl被CF拦截需用browser eval | 1个nofollow直链不传权 | 2026-06-28`
 
 ### Step 7: 记录
 
