@@ -74,7 +74,9 @@ opencli doctor
 
 ### Step 2: 选平台
 
-从 `platforms/public-platforms-list.md` 选平台。优先级：产品目录 > 技术检测页 > Add URL。优先选以前验证过可用的。
+从 `platforms/public-platforms.csv` 选平台（注意是 .csv 不是 .md）。优先级：产品目录 > 技术检测页 > Add URL。优先选以前验证过可用的（看「避坑说明」列有无实测记录）。
+
+⚠️ 选平台前先用 `search_files` 扫 `records/daily/` 所有历史记录，搜平台名称，排除已提交过的平台，避免重复提交。
 
 ### Step 3: 前台打开平台页面
 
